@@ -4,7 +4,7 @@
 
 This vue app list all first gen pokemon.
 
-### Live Test [Test](https://festive-heisenberg-cb39b6.netlify.app/)
+### [Live Test](https://festive-heisenberg-cb39b6.netlify.app/)
 
 <p align="center">
 <img src="https://i.imgur.com/K4Ak7Hkl.png?1"></p>
