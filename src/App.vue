@@ -12,8 +12,8 @@
       <div class= "row d-flex justify-content-center pb-5 mt-3">
     
 
-  <div v-for="(name, index ) in resultadoBusca" :key="name.url"> 
-   <Pokemon :name="name.name" :index="index+1" :url="name.url" />
+          <div v-for="(name, index ) in resultadoBusca" :key="name.url"> 
+          <Pokemon :name="name.name" :index="index+1" :url="name.url" />
 
 
             
@@ -34,7 +34,7 @@ export default {
   data(){
     return {
       pokemons: [],
-      busca: ' '
+      busca: ''
     }
   },
   created: function(){ //call it when created (useEffect?)
@@ -52,11 +52,13 @@ export default {
 
   computed:{
     resultadoBusca: function(){
-      if (this.busca == '' || this.busca == ' '){
+      let busca = this.busca.toLowerCase()
+      
+      if (busca == '' || busca == ' '){
         return this.pokemons
       }
       else{
-        return this.pokemons.filter(poke => poke.name.includes(this.busca))
+        return this.pokemons.filter(poke => poke.name.includes(busca))
         
       }
     }
@@ -65,13 +67,4 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  
-  margin-top: 60px;
-}
 </style>
