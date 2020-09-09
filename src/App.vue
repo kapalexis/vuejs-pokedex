@@ -38,7 +38,7 @@ export default {
     }
   },
   created: function(){ //call it when created (useEffect?)
-  axios.get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0").then(
+  axios.get("https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0").then(
     res => {
       
       this.pokemons= res.data.results
@@ -53,7 +53,7 @@ export default {
   computed:{
     resultadoBusca: function(){
       let busca = this.busca.toLowerCase()
-      
+
       if (busca == '' || busca == ' '){
         return this.pokemons
       }
